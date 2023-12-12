@@ -16,48 +16,48 @@
 
 # System Design 101
 
-Explain complex systems using visuals and simple terms. 
+用视觉和简单的术语解释复杂的系统。
 
-Whether you're preparing for a System Design Interview or you simply want to understand how systems work beneath the surface, we hope this repository will help you achieve that.
+无论您是在为系统设计面试做准备，还是只是想了解系统是如何在表面下工作的，我们希望这个存储库将帮助您实现这一点。
 
 # Table of Contents
 
 <!-- TOC toc.levels=2 -->
 
-- [Communication protocols](#communication-protocols)
+- [通信协议](#communication-protocols)
   - [REST API vs. GraphQL](#rest-api-vs-graphql)
-  - [How does gRPC work?](#how-does-grpc-work)
-  - [What is a webhook?](#what-is-a-webhook)
-  - [How to improve API performance?](#how-to-improve-api-performance)
+  - [gRPC是如何工作的?](#how-does-grpc-work)
+  - [什么是webhook?](#what-is-a-webhook)
+  - [如何提高API性能?](#how-to-improve-api-performance)
   - [HTTP 1.0 -\> HTTP 1.1 -\> HTTP 2.0 -\> HTTP 3.0 (QUIC)](#http-10---http-11---http-20---http-30-quic)
   - [SOAP vs REST vs GraphQL vs RPC](#soap-vs-rest-vs-graphql-vs-rpc)
   - [Code First vs. API First](#code-first-vs-api-first)
-  - [HTTP status codes](#http-status-codes)
-  - [What does API gateway do?](#what-does-api-gateway-do)
-  - [How do we design effective and safe APIs?](#how-do-we-design-effective-and-safe-apis)
-  - [TCP/IP encapsulation](#tcpip-encapsulation)
-  - [Why is Nginx called a “reverse” proxy?](#why-is-nginx-called-a-reverse-proxy)
-  - [What are the common load-balancing algorithms?](#what-are-the-common-load-balancing-algorithms)
-  - [URL, URI, URN - Do you know the differences?](#url-uri-urn---do-you-know-the-differences)
+  - [HTTP状态码](#http-status-codes)
+  - [API网关做什么?](#what-does-api-gateway-do)
+  - [我们如何设计有效和安全的api ?](#how-do-we-design-effective-and-safe-apis)
+  - [TCP/IP 封装](#tcpip-encapsulation)
+  - [为什么Nginx被称为“反向”代理?](#why-is-nginx-called-a-reverse-proxy)
+  - [常见的负载平衡算法有哪些?](#what-are-the-common-load-balancing-algorithms)
+  - [URL, URI, URN - 你知道它们的区别吗?](#url-uri-urn---do-you-know-the-differences)
 - [CI/CD](#cicd)
-  - [CI/CD Pipeline Explained in Simple Terms](#cicd-pipeline-explained-in-simple-terms)
-  - [Netflix Tech Stack (CI/CD Pipeline)](#netflix-tech-stack-cicd-pipeline)
-- [Architecture patterns](#architecture-patterns)
-  - [MVC, MVP, MVVM, MVVM-C, and VIPER](#mvc-mvp-mvvm-mvvm-c-and-viper)
-  - [18 Key Design Patterns Every Developer Should Know](#18-key-design-patterns-every-developer-should-know)
-- [Database](#database)
-  - [A nice cheat sheet of different databases in cloud services](#a-nice-cheat-sheet-of-different-databases-in-cloud-services)
-  - [8 Data Structures That Power Your Databases](#8-data-structures-that-power-your-databases)
-  - [How is an SQL statement executed in the database?](#how-is-an-sql-statement-executed-in-the-database)
-  - [CAP theorem](#cap-theorem)
-  - [Types of Memory and Storage](#types-of-memory-and-storage)
-  - [Visualizing a SQL query](#visualizing-a-sql-query)
-  - [SQL language](#sql-language)
-- [Cache](#cache)
-  - [Data is cached everywhere](#data-is-cached-everywhere)
-  - [Why is Redis so fast?](#why-is-redis-so-fast)
-  - [How can Redis be used?](#how-can-redis-be-used)
-  - [Top caching strategies](#top-caching-strategies)
+  - [简单解释CI/CD管道](#cicd-pipeline-explained-in-simple-terms)
+  - [Netflix技术栈 (CI/CD 管道)](#netflix-tech-stack-cicd-pipeline)
+- [体系结构模式](#architecture-patterns)
+  - [MVC, MVP, MVVM, MVVM-C, 和 VIPER](#mvc-mvp-mvvm-mvvm-c-and-viper)
+  - [每个开发人员都应该知道的18个关键设计模式](#18-key-design-patterns-every-developer-should-know)
+- [数据库](#database)
+  - [云服务中不同数据库的一个很好的小抄表](#a-nice-cheat-sheet-of-different-databases-in-cloud-services)
+  - [为数据库提供动力的8个数据结构](#8-data-structures-that-power-your-databases)
+  - [SQL语句是如何在数据库中执行的?](#how-is-an-sql-statement-executed-in-the-database)
+  - [CAP 定理](#cap-theorem)
+  - [内存和存储的类型](#types-of-memory-and-storage)
+  - [可视化SQL查询](#visualizing-a-sql-query)
+  - [SQL 语言](#sql-language)
+- [缓存](#cache)
+  - [数据被缓存到任何地方](#data-is-cached-everywhere)
+  - [为什么Redis这么快?](#why-is-redis-so-fast)
+  - [如何使用Redis ?](#how-can-redis-be-used)
+  - [顶级缓存策略](#top-caching-strategies)
 - [Microservice architecture](#microservice-architecture)
   - [What does a typical microservice architecture look like?](#what-does-a-typical-microservice-architecture-look-like)
   - [Microservice Best Practices](#microservice-best-practices)
@@ -591,11 +591,11 @@ Patterns are reusable solutions to common design problems, resulting in a smooth
   <img src="images/cloud-dbs2.png" />
 </p>
 
-Choosing the right database for your project is a complex task. Many database options, each suited to distinct use cases, can quickly lead to decision fatigue. 
+为您的项目选择正确的数据库是一项复杂的任务。许多数据库选项(每个都适合不同的用例)可能很快导致决策疲劳。
 
-We hope this cheat sheet provides high-level direction to pinpoint the right service that aligns with your project's needs and avoid potential pitfalls. 
+我们希望这份备忘单能够提供高层次的指导，帮助您找到符合项目需求的正确服务，并避免潜在的陷阱。
 
-Note: Google has limited documentation for their database use cases. Even though we did our best to look at what was available and arrived at the best option, some of the entries may need to be more accurate. 
+注意:Google的数据库用例文档有限。尽管我们尽了最大的努力查看可用的选项并得出最佳选项，但有些条目可能需要更准确。
 
 ### 8 Data Structures That Power Your Databases
 
@@ -718,7 +718,7 @@ For a backend engineer, you may need to know most of it. As a data analyst, you 
 
 ### Data is cached everywhere
 
-This diagram illustrates where we cache data in a typical architecture.
+该图说明了在典型架构中缓存数据的位置。
 
 <p>
   <img src="images/where do we cache data.jpeg" style="width: 720px" />
@@ -727,19 +727,19 @@ This diagram illustrates where we cache data in a typical architecture.
 
 There are **multiple layers** along the flow.
 
-1. Client apps: HTTP responses can be cached by the browser. We request data over HTTP for the first time, and it is returned with an expiry policy in the HTTP header; we request data again, and the client app tries to retrieve the data from the browser cache first.
-2. CDN: CDN caches static web resources. The clients can retrieve data from a CDN node nearby.
-3. Load Balancer: The load Balancer can cache resources as well.
-4. Messaging infra: Message brokers store messages on disk first, and then consumers retrieve them at their own pace. Depending on the retention policy, the data is cached in Kafka clusters for a period of time.
-5. Services: There are multiple layers of cache in a service. If the data is not cached in the CPU cache, the service will try to retrieve the data from memory. Sometimes the service has a second-level cache to store data on disk.
-6. Distributed Cache: Distributed cache like Redis holds key-value pairs for multiple services in memory. It provides much better read/write performance than the database.
-7. Full-text Search: we sometimes need to use full-text searches like Elastic Search for document search or log search. A copy of data is indexed in the search engine as well.
-8. Database: Even in the database, we have different levels of caches:
-- WAL(Write-ahead Log): data is written to WAL first before building the B tree index
-- Bufferpool: A memory area allocated to cache query results
-- Materialized View: Pre-compute query results and store them in the database tables for better query performance
-- Transaction log: record all the transactions and database updates
-- Replication Log: used to record the replication state in a database cluster
+1. Client apps: HTTP响应可以被浏览器缓存。我们第一次通过HTTP请求数据，它在HTTP报头中返回一个过期策略;我们再次请求数据，客户端应用程序首先尝试从浏览器缓存中检索数据。
+2. CDN: CDN缓存静态web资源。客户端可以从附近的CDN节点检索数据。
+3. Load Balancer: 负载均衡器也可以缓存资源。
+4. Messaging infra: 消息代理首先在磁盘上存储消息，然后消费者以自己的速度检索消息。根据保留策略，数据会在Kafka集群中缓存一段时间。
+5. Services: 服务中有多个缓存层。如果数据没有缓存在CPU缓存中，则服务将尝试从内存中检索数据。有时，该服务具有二级缓存，用于在磁盘上存储数据。
+6. Distributed Cache: 像Redis这样的分布式缓存在内存中保存了多个服务的键值对。它提供了比数据库更好的读/写性能。
+7. Full-text Search: 我们有时需要使用全文搜索，如Elastic Search来进行文档搜索或日志搜索。数据的副本也会在搜索引擎中建立索引。
+8. Database: 即使在数据库中，我们也有不同级别的缓存:
+- WAL(Write-ahead Log):数据在建立B树索引之前先写入WAL
+- Bufferpool: 分配给缓存查询结果的内存区域
+- Materialized View: 预先计算查询结果并将其存储在数据库表中，以获得更好的查询性能
+- Transaction log: 记录所有事务和数据库更新
+- Replication Log: 用于记录数据库集群的复制状态
 
 ### Why is Redis so fast? 
 
