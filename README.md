@@ -545,20 +545,20 @@ Incident report: Incidents are dispatched according to priority, and PagerDuty i
 ## Architecture patterns
 
 ### MVC, MVP, MVVM, MVVM-C, and VIPER
-These architecture patterns are among the most commonly used in app development, whether on iOS or Android platforms. Developers have introduced them to overcome the limitations of earlier patterns. So, how do they differ? 
+这些架构模式是应用开发中最常用的模式之一，无论是在iOS还是Android平台上。开发人员引入它们是为了克服早期模式的局限性。那么，它们有什么不同呢?
 
 <p>
   <img src="images/client arch patterns.png" style="width: 720px" />
 </p>
 
-- MVC, the oldest pattern, dates back almost 50 years 
-- Every pattern has a "view" (V) responsible for displaying content and receiving user input 
-- Most patterns include a "model" (M) to manage business data 
-- "Controller," "presenter," and "view-model" are translators that mediate between the view and the model ("entity" in the VIPER pattern)
+- MVC是最古老的模式，可以追溯到近50年前
+- 每个模式都有一个“视图”(V)，负责显示内容和接收用户输入
+- 大多数模式都包含一个“模型”(M)来管理业务数据
+- "Controller," "presenter," and "view-model" 是在视图和模型(VIPER模式中的“实体”)之间进行中介的转换器
 
-### 18 Key Design Patterns Every Developer Should Know
+### 每个开发人员都应该知道的18个关键设计模式
 
-Patterns are reusable solutions to common design problems, resulting in a smoother, more efficient development process. They serve as blueprints for building better software structures. These are some of the most popular patterns: 
+模式是常见设计问题的可重用解决方案，可导致更顺畅、更高效的开发过程。它们是构建更好的软件结构的蓝图。这些是一些最流行的图案: 
 
 <p>
   <img src="images/18-oo-patterns.png" />
@@ -1266,75 +1266,75 @@ What does it do?
 
 ## Linux
 
-### Linux file system explained
+### Linux文件系统说明
 
 <p>
   <img src="images/linux-file-systems.jpg" style="width: 680px" />
 </p>
 
-The Linux file system used to resemble an unorganized town where individuals constructed their houses wherever they pleased. However, in 1994, the Filesystem Hierarchy Standard (FHS) was introduced to bring order to the Linux file system.
+Linux文件系统过去就像一个没有组织的城镇，人们在那里随心所欲地建造自己的房子。然而，在1994年，引入了文件系统层次标准(FHS)来给Linux文件系统带来秩序。
 
-By implementing a standard like the FHS, software can ensure a consistent layout across various Linux distributions. Nonetheless, not all Linux distributions strictly adhere to this standard. They often incorporate their own unique elements or cater to specific requirements.
-To become proficient in this standard, you can begin by exploring. Utilize commands such as "cd" for navigation and "ls" for listing directory contents. Imagine the file system as a tree, starting from the root (/). With time, it will become second nature to you, transforming you into a skilled Linux administrator.
+通过实现像FHS这样的标准，软件可以确保跨各种Linux发行版的一致布局。尽管如此，并不是所有的Linux发行版都严格遵守这个标准。它们通常包含自己独特的元素或迎合特定的需求。
+要精通这个标准，您可以从探索开始。使用“cd”等命令进行导航，使用“ls”列出目录内容。把文件系统想象成一棵树，从根目录(/)开始。随着时间的推移，它将成为您的第二天性，使您成为熟练的Linux管理员。
 
-### 18 Most-used Linux Commands You Should Know 
+### 你应该知道的18个最常用的Linux命令
 
-Linux commands are instructions for interacting with the operating system. They help manage files, directories, system processes, and many other aspects of the system. You need to become familiar with these commands in order to navigate and maintain Linux-based systems efficiently and effectively. 
+Linux命令是与操作系统交互的指令。它们帮助管理文件、目录、系统进程和系统的许多其他方面。您需要熟悉这些命令，以便高效地导航和维护基于linux的系统。
 
-This diagram below shows popular Linux commands: 
+下图显示了常用的Linux命令:
 
 <p>
   <img src="images/18 Most-Used Linux Commands You Should Know-01.jpeg" style="width: 680px" />
 </p>
 
 
-- ls - List files and directories 
-- cd - Change the current directory 
-- mkdir - Create a new directory 
-- rm - Remove files or directories 
-- cp - Copy files or directories 
-- mv - Move or rename files or directories 
-- chmod - Change file or directory permissions 
-- grep - Search for a pattern in files 
-- find - Search for files and directories 
-- tar - manipulate tarball archive files 
-- vi - Edit files using text editors 
-- cat - display the content of files 
-- top - Display processes and resource usage 
-- ps - Display processes information 
-- kill - Terminate a process by sending a signal 
-- du - Estimate file space usage 
-- ifconfig - Configure network interfaces  
-- ping - Test network connectivity between hosts 
+- ls - 列出文件和目录 
+- cd - 更改当前目录 
+- mkdir - 创建一个新目录 
+- rm - 删除文件或目录 
+- cp - 复制文件或目录 
+- mv - 移动或重命名文件或目录 
+- chmod - 更改文件或目录权限 
+- grep - 在文件中搜索模式 
+- find - 搜索文件和目录 
+- tar - 操作tar来打包或解压缩存档文件
+- vi - 使用文本编辑器编辑文件 
+- cat - 显示文件的内容 
+- top - 显示进程和资源使用情况 
+- ps - 显示进程信息 
+- kill - 通过发送信号终止进程 
+- du - 估计文件空间使用情况 
+- ifconfig - 配置网络接口  
+- ping - 测试主机之间的网络连接 
 
-## Security
+## Security-安全
 
 ### How does HTTPS work?
 
-Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP.) HTTPS transmits encrypted data using Transport Layer Security (TLS.) If the data is hijacked online, all the hijacker gets is binary code. 
+HTTPS (Hypertext Transfer Protocol Secure)是超文本传输协议(Hypertext Transfer Protocol, HTTP)的扩展。HTTPS使用TLS (Transport Layer Security)传输加密数据。如果数据在网上被劫持，劫持者得到的只是二进制代码。
 
 <p>
   <img src="images/https.jpg" />
 </p>
 
 
-How is the data encrypted and decrypted?
+数据是如何加密和解密的?
 
-Step 1 - The client (browser) and the server establish a TCP connection.
+Step 1 - 客户端(浏览器)与服务器建立TCP连接。
 
-Step 2 - The client sends a “client hello” to the server. The message contains a set of necessary encryption algorithms (cipher suites) and the latest TLS version it can support. The server responds with a “server hello” so the browser knows whether it can support the algorithms and TLS version.
+Step 2 - 客户端向服务器发送“client hello”。该消息包含一组必要的加密算法(密码套件)和它可以支持的最新TLS版本。服务器响应一个“server hello”，这样浏览器就知道它是否支持算法和TLS版本。
 
-The server then sends the SSL certificate to the client. The certificate contains the public key, host name, expiry dates, etc. The client validates the certificate. 
+然后服务器将SSL证书发送到客户端。证书包含公钥、主机名、到期日期等。客户端验证证书。
 
-Step 3 - After validating the SSL certificate, the client generates a session key and encrypts it using the public key. The server receives the encrypted session key and decrypts it with the private key. 
+Step 3 - 在验证SSL证书之后，客户机生成会话密钥并使用公钥对其进行加密。服务器接收加密的会话密钥并使用私钥对其进行解密。
 
-Step 4 - Now that both the client and the server hold the same session key (symmetric encryption), the encrypted data is transmitted in a secure bi-directional channel.
+Step 4 - 既然客户机和服务器都持有相同的会话密钥(对称加密)，那么加密的数据将在安全的双向通道中传输。
 
-Why does HTTPS switch to symmetric encryption during data transmission? There are two main reasons:
+为什么HTTPS在数据传输过程中切换到对称加密?主要有两个原因:
 
-1. Security: The asymmetric encryption goes only one way. This means that if the server tries to send the encrypted data back to the client, anyone can decrypt the data using the public key.
+1. Security: 非对称加密只有一个方向。这意味着，如果服务器试图将加密的数据发送回客户端，任何人都可以使用公钥解密数据。
 
-2. Server resources: The asymmetric encryption adds quite a lot of mathematical overhead. It is not suitable for data transmissions in long sessions.
+2. Server resources: 非对称加密增加了相当多的数学开销。它不适合长时间的数据传输。
 
 ### Oauth 2.0 Explained With Simple Terms. 
 
